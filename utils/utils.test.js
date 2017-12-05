@@ -1,26 +1,30 @@
 const utils = require('./utils');
 const expect = require('expect');
 
-it('should add to numbers', () => {
-  var res = utils.add(33,11);
-  expect(res).toBe(44).toBeA('number');
-});
-
-it('should multiply by itself', () => {
-  var res = utils.square(2);
-  expect(res).toBe(4).toBeA('number');
-})
-
-it('should expect some values', () => {
-  // expect({name: 'andrew'}).toNotEqual({name: 'Andrew'})
-  expect({
-    name: 'Andrew',
-    age: 25,
-    location: 'North Port'
-  }).toInclude({
-    age: 25
+describe('Utils', () => {
+  it('should add to numbers', () => {
+    var res = utils.add(33,11);
+    expect(res).toBe(44).toBeA('number');
+  });
+  
+  it('should multiply by itself', () => {
+    var res = utils.square(2);
+    expect(res).toBe(4).toBeA('number');
+  })
+  
+  it('should expect some values', () => {
+    // expect({name: 'andrew'}).toNotEqual({name: 'Andrew'})
+    expect({
+      name: 'Andrew',
+      age: 25,
+      location: 'North Port'
+    }).toInclude({
+      age: 25
+    })
   })
 })
+
+
 
 it('should add to a number', (done) => {
   utils.asyncAdd(4,3, (sum) => {
